@@ -1,0 +1,21 @@
+<h2> Página de inicio</h2>
+
+{%if nombre %}
+    <h3>Hola {{ nombre }}, bienvenido a la web. Aquí tienes tu poema</h3>
+    {% if poema %}
+        <div>
+            {{poema | safe}}
+        </div>
+    {% endif %}
+    {% if img_url %}
+        <div style="margin-top: 20px;">
+            <h3>Imagen analizada:</h3>
+            <img src="{{ img_url }}" alt="Imagen subida" style="max-width: 500px; height: auto; border: 1px solid #ccc; padding: 10px;">
+        </div>
+    {% endif %}
+{% endif %}
+
+
+<form action="{{url_for('home')}}" method = "get">
+    <button type="submit">Ir a home</button>
+</form>

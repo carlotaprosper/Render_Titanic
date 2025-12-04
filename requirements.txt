@@ -1,0 +1,8 @@
+flask
+scikit-learn
+gunicorn
+pandas
+sqlalchemy
+psycopg2-binary
+cohere
+python-dotenv
