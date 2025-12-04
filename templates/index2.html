@@ -3,125 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenida - Inspiración Titanic</title>
+    <title>Página de Inicio - Relato del Viaje</title>
+    <!-- Importamos una fuente épica para los títulos -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Estilos CSS inspirados en el Titanic (azules, blancos, elegancia) */
+        /* --- ESTILOS DRAMÁTICOS DEL MAR Y EL HIELO (EPIC REVAMP) --- */
         body {
-            font-family: 'Georgia', serif; /* Fuente clásica */
-            background-color: #f0f8ff; /* Azul claro sutil */
-            color: #333;
+            /* Fondo similar al anterior, evocando el mar agitado */
+            background-image: url('https://placehold.co/1920x1080/0A192F/E0E7FF?text=Mar+Oscuro+e+Iceberg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Georgia', serif;
+            color: #E0E7FF;
             margin: 0;
-            padding: 20px;
+            padding: 40px;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Alinea arriba si el contenido es corto */
+            align-items: flex-start;
             min-height: 100vh;
+            position: relative; /* Necesario para el overlay dramático */
+        }
+        
+        /* Overlay oscuro para añadir drama y mejorar la legibilidad del texto */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.4); /* Oscurece el fondo un 40% */
+            z-index: -1;
         }
 
-        .main-content {
-            background-color: #ffffff; /* Fondo blanco para el contenido */
-            padding: 40px 50px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 50, 100, 0.2);
-            max-width: 800px;
+        .main-container {
+            max-width: 1000px; /* Un poco más ancho para más presencia */
             width: 95%;
-            border-top: 6px solid #005a99; /* Línea azul marino distintiva */
-            text-align: left; /* Alineación de texto por defecto */
+            background-color: rgba(10, 25, 47, 0.95); /* Panel principal más opaco y oscuro */
+            padding: 40px;
+            border-radius: 15px;
+            /* Sombra profunda y doble borde (metal frío y hielo) */
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.9), 0 0 15px #66FCF1; 
+            border: 3px solid #1F2833; 
+            outline: 2px solid #66FCF1; /* Simula un doble marco */
+            animation: slideIn 1.5s ease-out;
+            z-index: 10;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         h2 {
-            color: #004c8c; /* Azul marino profundo */
-            font-size: 2.2em;
+            font-family: 'Cinzel', serif; /* Fuente épica */
+            color: #FFD700; /* Dorado para destacar el título principal */
+            font-size: 3em;
             margin-bottom: 25px;
-            border-bottom: 2px solid #a0c4e2;
+            text-align: center;
+            letter-spacing: 5px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+            border-bottom: 3px solid #66FCF1;
             padding-bottom: 10px;
-            text-align: center; /* Centrar el título de la página */
         }
-
+        
         h3 {
-            color: #1e90ff; /* Azul brillante para los mensajes de bienvenida/títulos de sección */
-            margin-top: 20px;
-            margin-bottom: 15px;
-            font-style: italic;
-        }
-
-        /* Estilo para el contenedor del poema */
-        .poema-box {
-            background-color: #f8f8ff; /* Fondo muy claro (lavanda) para destacar el poema */
-            border-left: 5px solid #005a99; /* Borde vertical como una cita */
-            padding: 20px;
-            margin: 20px 0;
-            white-space: pre-wrap; /* Mantiene saltos de línea y espacios del poema */
-            line-height: 1.6;
-            color: #333;
-        }
-
-        /* Estilo para la imagen */
-        .image-container {
+            font-family: 'Cinzel', serif; /* También épico, pero más discreto */
+            color: #66FCF1; /* Cian frío */
+            font-style: normal;
             margin-top: 30px;
-            text-align: center; /* Centrar la imagen dentro de su contenedor */
-            padding: 15px;
-            border: 1px solid #a0c4e2; /* Borde sutil */
-            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #FFD700; /* Borde dorado */
+            padding-left: 15px;
+            font-size: 1.3em;
+            text-transform: uppercase;
+        }
+
+        /* Contenedores de contenido */
+        .content-box {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap; 
+            margin-top: 30px;
+        }
+
+        /* Estilo de Pergamino para el Poema */
+        .poema-container {
+            flex: 1 1 50%;
+            background-color: #fcefdc; /* Tono de pergamino más cálido */
+            color: #5d4037; /* Texto sepia oscuro */
+            padding: 35px;
+            border-radius: 10px;
+            /* Sombra y borde que simulan papel enrollado/gastado */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); 
+            border: 3px dashed #8d6e63; /* Borde de papel antiguo */
+            line-height: 1.8;
+            min-width: 350px;
+            text-align: justify;
+        }
+        
+        .poema-container div {
+            white-space: pre-wrap;
+            font-size: 1.15em;
+            font-family: 'Times New Roman', serif;
+        }
+
+        /* Estilo de Panel Metálico para la Imagen (Ventana de Ojo de Buey) */
+        .image-display {
+            flex: 1 1 35%;
+            min-width: 300px;
+            text-align: center;
+            background: linear-gradient(180deg, #343a40 0%, #1f2833 100%); /* Degradado metálico */
+            padding: 25px;
+            border-radius: 50%; /* ¡Forma de ojo de buey (ventana circular)! */
+            border: 5px solid #b3a38d; /* Borde de latón antiguo */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8), inset 0 0 10px #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 300px; /* Fija la altura para mantener la forma circular */
+            overflow: hidden; /* Oculta partes de la imagen fuera del círculo */
+        }
+
+        .image-display h3 {
+             color: #FFD700; /* Título dorado */
+             border-left: none;
+             padding-left: 0;
+             margin-top: 0;
+             margin-bottom: 10px;
+             font-size: 1em;
         }
 
         img {
-            max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
-            height: auto;
-            border: 5px solid #fff; /* Borde blanco alrededor de la imagen */
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 3px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Asegura que la imagen cubra el círculo sin deformarse */
+            border: 3px solid #0A192F; /* Marco interno para simular la ventana */
+            border-radius: 50%; /* La imagen también se recorta en círculo */
+            box-shadow: 0 0 10px rgba(102, 252, 241, 0.7); /* Brillo del mar/hielo */
+            transition: transform 0.5s;
         }
         
-        /* Estilo para el botón de navegación */
-        .nav-form {
-            text-align: right; /* Alinea el botón a la derecha */
-            margin-top: 40px;
+        img:hover {
+            transform: scale(1.1); /* Zoom sutil al pasar el ratón */
         }
 
+        /* Botón de navegación estilo Latón/Cobre Antiguo */
+        .nav-form {
+            text-align: center; /* Centramos el botón de navegación */
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px dashed #45A29E;
+        }
+        
         button[type="submit"] {
-            background-color: #005a99;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
+            background: linear-gradient(145deg, #b3a38d 0%, #8d6e63 100%); /* Degradado de latón a cobre */
+            color: #402f23; /* Texto oscuro sobre el metal */
+            padding: 15px 40px;
+            border: 3px solid #ffd700; /* Borde de oro pulido */
+            border-radius: 8px;
             cursor: pointer;
-            font-size: 1em;
-            transition: background-color 0.3s;
+            font-size: 1.2em;
+            font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            letter-spacing: 2px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8), inset 0 0 10px rgba(255, 255, 255, 0.3);
+            transition: all 0.3s;
         }
 
         button[type="submit"]:hover {
-            background-color: #004c8c;
+            background: linear-gradient(145deg, #ffd700 0%, #b3a38d 100%); /* Brillo más fuerte al pasar el ratón */
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 1);
         }
 
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .content-box {
+                flex-direction: column;
+            }
+            .poema-container, .image-display {
+                flex: 1 1 100%;
+                min-width: auto;
+            }
+            .image-display {
+                border-radius: 10px; /* Volvemos a rectángulo en móviles para ahorrar espacio */
+                height: auto;
+            }
+            img {
+                 border-radius: 4px; /* Eliminamos el recorte circular en móviles */
+                 height: auto;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="main-content">
-        <h2>Página de Inicio</h2>
+    <div class="main-container">
+        <h2>El Relato de un Viaje Épico</h2>
 
         {%if nombre %}
-            <h3>Hola {{ nombre }}, bienvenido a la web. Aquí tienes tu poema.</h3>
+            <h3>Hola {{ nombre }}, bienvenido a bordo. El destino es incierto, pero la historia perdurará.</h3>
 
-            {% if poema %}
-                <div class="poema-box">
-                    {{poema | safe}}
-                </div>
-            {% endif %}
+            <div class="content-box">
+                
+                {% if poema %}
+                    <div class="poema-container">
+                        {{poema | safe}}
+                    </div>
+                {% endif %}
 
-            {% if img_url %}
-                <div class="image-container">
-                    <h3>Imagen analizada:</h3>
-                    <img src="{{ img_url }}" alt="Imagen analizada">
-                </div>
-            {% endif %}
+                {% if img_url %}
+                    <div class="image-display">
+                        <h3>Vista desde el Ojo de Buey:</h3>
+                        <!-- Usamos el elemento img sin estilos en línea para que tome los estilos CSS -->
+                        <img src="{{ img_url }}" alt="Imagen analizada">
+                    </div>
+                {% endif %}
+
+            </div>
         {% endif %}
 
         <form action="{{url_for('home')}}" method = "get" class="nav-form">
-            <button type="submit">Ir a Home</button>
+            <button type="submit">Continuar la Travesía</button>
         </form>
     </div>
 </body>

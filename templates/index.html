@@ -3,45 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page - Inspiración Titanic</title>
+    <title>HOME PAGE - El Viaje Épico</title>
     <style>
-        /* Estilos CSS inspirados en el Titanic (azules, blancos, elegancia) */
+        /* --- ESTILOS DRAMÁTICOS DEL MAR Y EL HIELO --- */
         body {
-            font-family: 'Georgia', serif; /* Una fuente clásica y elegante */
-            background-color: #f0f8ff; /* Azul claro muy sutil, como el aire del mar */
-            color: #333; /* Texto principal oscuro */
+            /* Imagen de fondo de un barco en un mar agitado con icebergs (simulado con un placeholder oscuro) */
+            background-image: url('https://placehold.co/1920x1080/0A192F/E0E7FF?text=Mar+Oscuro+e+Iceberg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Georgia', serif; /* Clásico y serio */
+            color: #E0E7FF; /* Texto claro, como la niebla o el metal */
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh; /* Ocupa toda la altura de la vista */
-            flex-direction: column;
+            min-height: 100vh;
         }
 
-        .container {
-            background-color: #ffffff; /* Fondo blanco para el contenido, como un salón */
+        .login-panel {
+            background-color: rgba(10, 25, 47, 0.85); /* Azul muy oscuro y semitransparente (acero sumergido) */
             padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 50, 100, 0.2); /* Sombra elegante azul marino */
-            text-align: center;
-            max-width: 400px;
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.7), 0 0 10px #66FCF1; /* Sombra profunda y brillo cian frío */
+            max-width: 380px;
             width: 90%;
-            border-top: 5px solid #005a99; /* Una línea azul marino distintiva */
+            border: 2px solid #66FCF1; /* Marco metálico frío */
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         h1 {
-            color: #004c8c; /* Azul marino profundo para el encabezado principal */
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            border-bottom: 2px solid #a0c4e2; /* Línea divisoria azul claro */
+            color: #E0E7FF;
+            font-size: 2.8em;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+            letter-spacing: 2px;
+            border-bottom: 1px solid #66FCF1;
             padding-bottom: 10px;
         }
 
         h3 {
-            color: #1e90ff; /* Azul brillante para el estado */
+            color: #66FCF1; /* Cian frío para el estado, como una luz de advertencia */
             margin-top: 0;
             margin-bottom: 30px;
+            font-style: italic;
+            text-transform: uppercase;
         }
 
         label {
@@ -49,53 +62,67 @@
             text-align: left;
             margin-bottom: 8px;
             font-weight: bold;
-            color: #005a99; /* Azul marino para las etiquetas */
+            color: #B4C4D4; /* Gris azulado suave */
         }
 
         input[type="url"] {
             width: 100%;
             padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #a0c4e2; /* Borde azul claro */
-            border-radius: 5px;
-            box-sizing: border-box; /* Incluye padding y borde en el ancho total */
-            transition: border-color 0.3s;
+            margin-bottom: 25px;
+            border: 1px solid #66FCF1;
+            border-radius: 6px;
+            box-sizing: border-box;
+            background-color: #1F2833; /* Fondo oscuro para el input */
+            color: #E0E7FF;
+            transition: all 0.3s;
         }
 
         input[type="url"]:focus {
-            border-color: #004c8c; /* Borde azul marino al enfocar */
+            border-color: #45A29E;
+            box-shadow: 0 0 8px #66FCF1;
             outline: none;
         }
 
+        /* Botón de navegación estilo metal frío */
         button[type="submit"] {
-            background-color: #005a99; /* Azul marino para el botón */
-            color: white;
-            padding: 12px 25px;
+            background: linear-gradient(145deg, #45A29E 0%, #0B0C10 100%); /* Degradado de cian a oscuro */
+            color: #E0E7FF;
+            padding: 12px 30px;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
             cursor: pointer;
             font-size: 1.1em;
-            transition: background-color 0.3s, transform 0.1s;
+            font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            transition: all 0.3s;
         }
 
         button[type="submit"]:hover {
-            background-color: #004c8c; /* Azul más oscuro al pasar el ratón */
-            transform: translateY(-1px); /* Efecto sutil de elevación */
+            background: linear-gradient(145deg, #45A29E 0%, #1F2833 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Quitamos los br's y usamos márgenes */
+        form {
+            margin-top: 20px;
         }
 
     </style>
 </head>
 <body>
-    <div class="container">
+    <!-- Panel principal de entrada -->
+    <div class="login-panel">
         <h1>HOME PAGE</h1>
 
         <h3>Status OK</h3>
 
+        <!-- La acción del formulario es la misma que tenías -->
         <form action="{{url_for('inicio')}}" method="post"> 
             <label for="img_url">URL de la imagen (solo png):</label>
-            <input type="url" id="img_url" name="img_url" placeholder="Pega aquí la URL de la imagen (PNG)" required>
+            <input type="url" id="img_url" name="img_url" placeholder="Pon aquí la url" required>
 
             <button type="submit">Ir a inicio</button>
         </form>
