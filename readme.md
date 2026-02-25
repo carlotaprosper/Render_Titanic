@@ -31,7 +31,7 @@ Para que la aplicación funcione correctamente, tu directorio debe verse más o 
 └── 📁 templates/             # CARPETA OBLIGATORIA PARA FLASK
     ├── 📄 index.html         # Página de inicio con el formulario
     └── 📄 index2.html        # Página de resultados
-----------------------------
+```
 ### 🚀 Instalación y Configuración
 #### 1. Instalar dependencias Asegúrate de tener instaladas las librerías necesarias ejecutando:
 
